@@ -1,0 +1,38 @@
+This file contains message digests of all files listed in MANIFEST,
+signed via the Module::Signature module, version 0.53.
+
+To verify the content in this distribution, first make sure you have
+Module::Signature installed, then type:
+
+    % cpansign -v
+
+It will check each file's integrity, as well as the signature's
+validity.  If "==> Signature verified OK! <==" is not displayed,
+the distribution may already have been compromised, and you should
+not run its Makefile.PL or Build.PL.
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+SHA1 bec479fe587a26ec6b8d552d343e197e3165e295 Build.PL
+SHA1 54f59467c3a80c3bdff271e659f5e8156b91bbc1 MANIFEST
+SHA1 21f946b3e5834d9353cf897dd20f79652c84b284 META.yml
+SHA1 cb40b97aea52c914602b4e58a6e22e91978540e6 Makefile.PL
+SHA1 d83b36dc949954246c3ad3e78f6f0189b718c429 README
+SHA1 3ea8a9ea2bedb0dee86669ab3b62fa48de1e25e8 lib/Catalyst/Plugin/Images.pm
+SHA1 ce6827651425da4cad375ad681269a3b1d2c5f7f t/basic.t
+SHA1 d3caf45ef3c742bcb0b174f5246ef5a8ea0fdcba t/data/gorch.png
+SHA1 d3caf45ef3c742bcb0b174f5246ef5a8ea0fdcba t/data/one/foo.png
+SHA1 da39a3ee5e6b4b0d3255bfef95601890afd80709 t/data/three/keep
+SHA1 b4b8c80b71885cf49fefd4cf9681d06fb54e4fc8 t/data/two/bar.png
+SHA1 71810ab90fee4e535ebf931857f2fef66bdcfc82 t/lib/ImgTestApp.pm
+SHA1 94a9dda27e12efff3b8333787eb9d9276dd3299a t/lib/ImgTestApp/Controller/Images.pm
+SHA1 86d255a7c9f065a13049108362c949b3e35a4c24 t/pod.t
+SHA1 e923679a1bbd8eb8f727e46f5906af25de27ec97 t/pod_coverage.t
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (Darwin)
+
+iD8DBQFEXpOxVCwRwOvSdBgRAk/4AJ9WECwNVoSyp4cO9gNERDb6qLmbcgCcDUWX
+l9n+ATaR6AZxIQ+MHc81CY0=
+=sK/0
+-----END PGP SIGNATURE-----

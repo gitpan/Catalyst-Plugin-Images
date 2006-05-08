@@ -1,0 +1,17 @@
+---
+name: Catalyst-Plugin-Images
+version: 0.01
+author: ~
+abstract: Generate image tags for static files.
+license: perl
+requires:
+  Catalyst: 5.5
+  HTML::Entities: 0
+  Image::Size: 0
+  Path::Class: 0
+  perl: 5.8.1
+provides:
+  Catalyst::Plugin::Images:
+    file: lib/Catalyst/Plugin/Images.pm
+    version: 0.01
+generated_by: Module::Build version 0.2611
