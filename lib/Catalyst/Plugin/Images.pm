@@ -7,14 +7,14 @@ use warnings;
 
 use Image::Size ();
 use HTML::Entities ();
-
 use Path::Class ();
+use MRO::Compat;
 
-our $VERSION = "0.01";
+our $VERSION = "0.02";
 
 sub setup {
     my $app = shift;
-    my $ret = $app->NEXT::setup( @_ );
+    my $ret = $app->next::method( @_ );
 
     $app->config->{images}{paths} ||= [
         $app->path_to(qw/root static/),
@@ -126,13 +126,15 @@ Catalyst::Plugin::Images - Generate image tags for static files.
 
     # ... somewhere in your templates
 
-    [% c.image_tag("foo.png" => "alt text") %];
+    [% c.image_tag("foo.png", alt => "alt text") %];
 
 =head1 DESCRIPTION
 
-This plugin aims to assist you in generating image tags that contain alt text,
-a properly escaped src attribute, height and width info, without worrying too
-much.
+This plugin provides a quick and easy way to include your images on the page,
+automatically extracting and caching image metadata. It's automatically 
+extendable, just pass whatever attribute you require as a key/value pair, and
+it will be added to the image tag. It will also look through a preset of folders
+so that you don't have to specify the full address to your image.
 
 =head1 METHODS
 
@@ -141,7 +143,8 @@ much.
 =item image_tag $basename, %attrs
 
 This method generates an image tag for the image named $basename, with the
-extra tags %attr.
+extra tags %attr automatically added to the resulting HTML tag. If you don't
+specify height/width, it will be autodetected from the image.
 
 =item get_image_info $basename
 
@@ -162,7 +165,7 @@ C<Image::Size>.
 =item image_path_to_uri $path, $basename
 
 Generates a URI using L<Catalyst/uri_for>, with the absolute path C<$path>
-relativized to C<uri_base>. See </CONFIGURATION>.
+relativized to C<uri_base>. See L</CONFIGURATION>.
 
 =item get_cached_image_info
 
@@ -216,6 +219,15 @@ keys C<width>, C<height>, C<uri>, and C<path>.
 
 L<Catalyst>, L<Catalyst::Plugin::Static::Simple>, L<Image::Size>
 
+=head1 AUTHOR
+
+Yuval Kogman, C<nothingmuch@woobling.org>
+
+Last released by Tomas Doran, C<bobtfish@bobtfish.net>
+
+=head1 LICENSE
+
+This library is free software, you can redistribute it and/or modify it under
+the same terms as Perl itself.
+
 =cut
-
-
